@@ -1,10 +1,10 @@
 package patient
 
 import (
-	"github.com/fishjerky/jubo/backend/internal/patient/model"
 	"fmt"
 	"net/http"
 
+	"github.com/fishjerky/jubo-backend-api/internal/patient/model"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +16,7 @@ func Read(c *gin.Context) {
 	// 從URL中獲取ID
 	id := c.Param("id")
 
-	// 遍歷patient數組，查找對應的patient
+	// 未接DB, 需查找對應的patient
 	for _, p := range model.FindAll() {
 		if fmt.Sprintf("%v", p.ID) == id {
 			c.JSON(http.StatusOK, gin.H{"data": p})

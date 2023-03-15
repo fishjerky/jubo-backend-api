@@ -2,9 +2,9 @@ package order
 
 import (
 	"fmt"
-	"github.com/fishjerky/jubo/backend/internal/order/model"
 	"net/http"
 
+	"github.com/fishjerky/jubo-backend-api/internal/order/model"
 	"github.com/gin-gonic/gin"
 )
 
@@ -12,6 +12,7 @@ func Update(c *gin.Context) {
 	// 從URL中獲取ID
 	id := c.Param("id")
 
+	// 未接DB, 需查找對應的patient
 	orders := model.FindAll()
 	for i, p := range orders {
 		fmt.Printf("Patient: %s Order: %s\n", p.ID, id)
@@ -21,7 +22,7 @@ func Update(c *gin.Context) {
 			if err := c.ShouldBindJSON(&updatedOrder); err != nil {
 				fmt.Printf("Update Order Fail. Error: %v\n", err)
 				c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal Server Error"})
-				return // 返回錯誤響應，並結束函數
+				return
 
 			} else {
 				updatedOrder.ID = p.ID
@@ -29,11 +30,11 @@ func Update(c *gin.Context) {
 
 				// 返回更新後的patient
 				c.JSON(http.StatusOK, gin.H{"data": updatedOrder})
-				return // 更新後結束函數
+				return
 			}
 		}
 	}
 
-	// 如果沒有找到對應的patient，返回404
+	// 404
 	c.JSON(http.StatusNotFound, gin.H{"error": "Order not found"})
 }

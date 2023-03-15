@@ -1,6 +1,6 @@
 package app
 
-import "github.com/fishjerky/jubo/backend/configs"
+import "github.com/fishjerky/jubo-backend-api/configs"
 
 type Di struct {
 	config *configs.Config

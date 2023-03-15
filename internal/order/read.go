@@ -1,8 +1,9 @@
 package order
 
 import (
-	"github.com/fishjerky/jubo/backend/internal/order/model"
 	"net/http"
+
+	"github.com/fishjerky/jubo-backend-api/internal/order/model"
 
 	"github.com/gin-gonic/gin"
 )

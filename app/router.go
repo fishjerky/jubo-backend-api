@@ -1,8 +1,8 @@
 package app
 
 import (
-	"github.com/fishjerky/jubo/backend/internal/order"
-	"github.com/fishjerky/jubo/backend/internal/patient"
+	"github.com/fishjerky/jubo-backend-api/internal/order"
+	"github.com/fishjerky/jubo-backend-api/internal/patient"
 )
 
 func setApiRouter(app *App) {

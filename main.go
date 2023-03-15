@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/fishjerky/jubo/backend/app"
-	"github.com/fishjerky/jubo/backend/configs"
+	"github.com/fishjerky/jubo-backend-api/app"
+	"github.com/fishjerky/jubo-backend-api/configs"
 )
 
 func main() {

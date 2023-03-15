@@ -1,10 +1,10 @@
 package patient
 
 import (
-	"github.com/fishjerky/jubo/backend/internal/patient/model"
 	"fmt"
 	"net/http"
 
+	"github.com/fishjerky/jubo-backend-api/internal/patient/model"
 	"github.com/gin-gonic/gin"
 )
 
