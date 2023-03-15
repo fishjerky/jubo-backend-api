@@ -14,7 +14,6 @@ go verion > 1.16
 
 1. 進入專案目錄：cd backend/
 1. 安裝相依套件：go mod tidy
-1. 執行專案：go run main.go
 
 ## Usage
 
